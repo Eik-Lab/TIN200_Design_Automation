@@ -5,7 +5,14 @@ Academic content for the NMBU course TIN200, Digital Manufacturing and Design Te
 Repo includes:
 
 - Presentations
+   - CAD
+   - API
+   - Design Automation 
 - Lessons / Scripts
+   - Lesson 1
+   - Lesson 2
+   - Lesson 3
+   - Lesson 4  
 
 ## Resources
 
