@@ -30,3 +30,4 @@ Fusion 360 API
 - [Fusion 360 API - reference manual](https://help.autodesk.com/view/fusion360/ENU/?guid=GUID-7B5A90C8-E94C-48DA-B16B-430729B734DC)
 - [Fusion 360 API - sample programs](https://help.autodesk.com/view/fusion360/ENU/?guid=SampleList)
 - [Fusion 360 forum - API and Scripts](https://forums.autodesk.com/t5/fusion-360-api-and-scripts/bd-p/22)
+- [Fusion 360 API - object model](https://help.autodesk.com/cloudhelp/ENU/Fusion-360-API/ExtraFiles/Fusion.pdf)
