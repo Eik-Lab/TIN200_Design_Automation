@@ -9,10 +9,10 @@ Academic content for the NMBU course TIN200, Digital Manufacturing and Design Te
    - API
    - Design Automation 
 - Lessons / Scripts
-   - Lesson 1
-   - Lesson 2
-   - Lesson 3
-   - Lesson 4  
+   - Lesson 1: Batch export
+   - Lesson 2: Engraving
+   - Lesson 3: TBA
+   - Lesson 4: TBA
 
 ## Resources
 
