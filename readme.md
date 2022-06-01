@@ -9,10 +9,10 @@ Academic content for the NMBU course TIN200, Digital Manufacturing and Design Te
    - API
    - Design Automation 
 - Lessons / Scripts
-   - Lesson 1
-   - Lesson 2
-   - Lesson 3
-   - Lesson 4  
+   - Lesson 1: Batch export
+   - Lesson 2: Engraving
+   - Lesson 3: TBA
+   - Lesson 4: TBA
 
 ## Prerequisites / Requirements
 - [Autodesk Fusion 360](https://www.autodesk.com/products/fusion-360/free-trial)
@@ -35,3 +35,4 @@ Fusion 360 API
 - [Fusion 360 API - reference manual](https://help.autodesk.com/view/fusion360/ENU/?guid=GUID-7B5A90C8-E94C-48DA-B16B-430729B734DC)
 - [Fusion 360 API - sample programs](https://help.autodesk.com/view/fusion360/ENU/?guid=SampleList)
 - [Fusion 360 forum - API and Scripts](https://forums.autodesk.com/t5/fusion-360-api-and-scripts/bd-p/22)
+- [Fusion 360 API - object model](https://help.autodesk.com/cloudhelp/ENU/Fusion-360-API/ExtraFiles/Fusion.pdf)

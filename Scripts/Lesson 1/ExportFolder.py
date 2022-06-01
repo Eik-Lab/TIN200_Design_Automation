@@ -1,5 +1,5 @@
-#Author - Sindre E. Hinderaker
-#Description - Script that exports every document in the current folder to an STEP-format, at a desired file-location.
+# Author - Sindre E. Hinderaker
+# Description - Script that exports every design-document in the current active folder to an STEP-format, at a desired file-location.
 
 
 import os, adsk.core, adsk.fusion, traceback
@@ -13,12 +13,15 @@ fileType = '.step'
 def main():
     ui = None
     try:
+        # Get the fusion 360 application
         app = adsk.core.Application.get()
+        # Get user interface
         ui  = app.userInterface
         
+        # Get application data
         data = app.data
-        #data.activeProject
-        data.activeFolder
+        
+        # Pass the active folder to the function for processing and exportion
         processFolder(data.activeFolder)
             
         ui.messageBox(f'Finished exporting folder to "{folderPath}"')
@@ -28,17 +31,18 @@ def main():
             ui.messageBox('Failed:\n{}'.format(traceback.format_exc()))
 
 
-# Recursive function to process the contents of the folder.
+# (Recursive) function to process the design-documents of the folder.
 def processFolder(folder):
     ui = None
-    try:        
+    try:
+        # Get the Fusion 360 application, documents and user interface
         app = adsk.core.Application.get()
         docs = app.documents
         ui  = app.userInterface
         
         # ui.messageBox('Processing folder: ' + folder.name)
 
-        # Create directory/folder with folder name from Fusion 360
+        # Create directory/folder (on computer) with current-folder name from Fusion 360
         filePath = os.path.join(folderPath, folder.name + '/')
         os.mkdir(filePath)
 
@@ -73,11 +77,11 @@ def processFolder(folder):
         
                     # Create a FusionArchiveExportOptions object and do the export.
                     fusionArchiveOptions = exportMgr.createSTEPExportOptions(filePath + doc.name + fileType)
-                    # fusionArchiveOptions = exportMgr.createSTEPExportOptions(folderPath + doc.name + fileType)
                     res = exportMgr.execute(fusionArchiveOptions)
                                 
                     doc.close(False)
-                    
+        
+        # Recurtion, pass subfolders to the same function
         # for subFolder in folder.dataFolders:
         #     processFolder(subFolder)
 
