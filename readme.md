@@ -14,6 +14,11 @@ Academic content for the NMBU course TIN200, Digital Manufacturing and Design Te
    - Lesson 3
    - Lesson 4  
 
+## Prerequisites / Requirements
+- [Autodesk Fusion 360](https://www.autodesk.com/products/fusion-360/free-trial)
+- [Visual Stusio Code](https://code.visualstudio.com/download)
+- [Python](https://www.python.org/downloads/)
+
 ## Resources
 
 Fusion 360
