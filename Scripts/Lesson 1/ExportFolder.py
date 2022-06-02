@@ -1,54 +1,51 @@
 # Author - Sindre E. Hinderaker
-# Description - Script that exports every design-document in the current active folder to an STEP-format, at a desired file-location.
+# Description - Script that exports every document in the current folder to an STEP-format, at a desired file-location.
 
 
 import os, adsk.core, adsk.fusion, traceback
 
 # Folder path can be modified to alter location of saved
-folderPath = 'C:/Users/HP/Downloads/'
+folder_path = 'C:/Users/HP/Desktop/'
 
 # To change file type the associated export manager must also be used
-fileType = '.step'
+file_type = '.step'
 
 def run(context):
     ui = None
     try:
-        # Get the fusion 360 application
         app = adsk.core.Application.get()
-        # Get user interface
         ui  = app.userInterface
-        
-        # Get application data
+
         data = app.data
-        
-        # Pass the active folder to the function for processing and exportion
-        processFolder(data.activeFolder)
+        #data.activeProject
+        #data.activeFolder
+
+        export_folder(data.activeFolder)
             
-        ui.messageBox(f'Finished exporting folder to "{folderPath}"')
+        ui.messageBox(f'Finished exporting folder to "{folder_path}"')
 
     except:
         if ui:
             ui.messageBox('Failed:\n{}'.format(traceback.format_exc()))
 
 
-# (Recursive) function to process the design-documents of the folder.
-def processFolder(folder):
+# Recursive function to process the contents of the folder.
+def export_folder(folder: adsk.core.DataFolder):
     ui = None
-    try:
-        # Get the Fusion 360 application, documents and user interface
+    try:        
         app = adsk.core.Application.get()
-        docs = app.documents
+        documents = app.documents
         ui  = app.userInterface
-        
+
         # ui.messageBox('Processing folder: ' + folder.name)
 
-        # Create directory/folder (on computer) with current-folder name from Fusion 360
-        filePath = os.path.join(folderPath, folder.name + '/')
-        os.mkdir(filePath)
+        # Create directory/folder with folder name from Fusion 360
+        file_path = os.path.join(folder_path, folder.name + '/')
+        os.mkdir(file_path)
 
         # Create progress bar
-        exportProgress = ui.createProgressDialog()
-        exportProgress.show(title=f'Exporting: {folder.name}', 
+        export_progress = ui.createProgressDialog()
+        export_progress.show(title=f'Exporting: {folder.name}', 
                             message='Processing file %v of %m (%p %)',
                             minimumValue=0, 
                             maximumValue=folder.dataFiles.count, 
@@ -56,41 +53,42 @@ def processFolder(folder):
         # %p - percentage completed
         # %v - current value
         # %m - total steps
-
+        
         # Loop over files in folder
         for i, file in enumerate(folder.dataFiles):
             # ui.messageBox('Processing: ' + file.name)
 
             # Increment progress bar value
-            exportProgress.progressValue = i + 1
+            export_progress.progressValue = i + 1
 
             # Try opening the document but gracefully fail and 
             # assume the document isn't a Fusion document.            
             try:
-                doc = docs.open(file, True)
+                document = documents.open(file, True)
             except:
-                doc = None
+                document = None
 
-            if doc:            
+            if document:            
                 # Find the Design product in the document.
-                for prod in doc.products:
+                for prod in document.products:
                     if prod.objectType == adsk.fusion.Design.classType():
                         des = prod
                         break
                     
                 if des:
                     # Get the ExportManager from the active design.
-                    exportMgr = des.exportManager
-        
-                    # Create a FusionArchiveExportOptions object and do the export.
-                    exportOptions = exportMgr.createSTEPExportOptions(filePath + doc.name + fileType)
-                    res = exportMgr.execute(exportOptions)
+                    exp_manager = des.exportManager
+
+                    # Create a export options object and specify file type
+                    exp_options = exp_manager.createSTEPexp_options(file_path + document.name + file_type)
+
+                    # Execute export
+                    res = exp_manager.execute(exp_options)
                                 
-                    doc.close(False)
-        
-        # Recurtion, pass subfolders to the same function
-        # for subFolder in folder.dataFolders:
-        #     processFolder(subFolder)
+                    document.close(False)
+                    
+        for subFolder in folder.dataFolders:
+            export_folder(subFolder)
 
     except:
         if ui:
