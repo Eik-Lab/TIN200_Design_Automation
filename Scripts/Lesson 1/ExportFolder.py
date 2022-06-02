@@ -10,7 +10,7 @@ folderPath = 'C:/Users/HP/Downloads/'
 # To change file type the associated export manager must also be used
 fileType = '.step'
 
-def main():
+def run(context):
     ui = None
     try:
         # Get the fusion 360 application
@@ -48,7 +48,14 @@ def processFolder(folder):
 
         # Create progress bar
         exportProgress = ui.createProgressDialog()
-        exportProgress.show(title=f'Exporting: {folder.name}', message='Processing file %v of %m (%p %)', minimumValue=0, maximumValue=folder.dataFiles.count, delay=0)
+        exportProgress.show(title=f'Exporting: {folder.name}', 
+                            message='Processing file %v of %m (%p %)',
+                            minimumValue=0, 
+                            maximumValue=folder.dataFiles.count, 
+                            delay=0)
+        # %p - percentage completed
+        # %v - current value
+        # %m - total steps
 
         # Loop over files in folder
         for i, file in enumerate(folder.dataFiles):
@@ -88,6 +95,4 @@ def processFolder(folder):
     except:
         if ui:
             ui.messageBox('Failed:\n{}'.format(traceback.format_exc()))
-        
-        
-main()
+
