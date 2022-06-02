@@ -37,7 +37,7 @@ def run(context):
         # Create construction plane on selected face 
         # This will ensure that origo for this sketch is at the center of the face (not relative to the root component)
         const_plane_input = root_comp.constructionPlanes.createInput()
-        const_plane_input.setByOffset(selected_face, adsk.core.ValueInput.createByReal(0))
+        const_plane_input.setByOffset(selected_face, adsk.core.ValueInput.createByReal(1))
         const_plane = root_comp.constructionPlanes.add(const_plane_input)
 
         # Create sketch on selected face
@@ -46,7 +46,13 @@ def run(context):
         # Draw text on sketch
         texts = sketch.sketchTexts
         engrave_input = texts.createInput2(formattedText=engravedText, height=textHeight)
+        
+        # Text customization
+        # engrave_input.fontName = 'Harlow Solid Italic'
+        # engrave_input.fontName = 'Times New Roman'
+        # engrave_input.angle = 3.1415/2 # pi/2 = 90 deg
 
+        # Text placement
         cornerPointText = adsk.core.Point3D.create(1, 1, 0)
         diagonalPointText = adsk.core.Point3D.create(-1, -1, 0)
         horizontalAlignmentText = adsk.core.HorizontalAlignments.CenterHorizontalAlignment
