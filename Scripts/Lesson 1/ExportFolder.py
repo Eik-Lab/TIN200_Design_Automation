@@ -83,8 +83,8 @@ def processFolder(folder):
                     exportMgr = des.exportManager
         
                     # Create a FusionArchiveExportOptions object and do the export.
-                    fusionArchiveOptions = exportMgr.createSTEPExportOptions(filePath + doc.name + fileType)
-                    res = exportMgr.execute(fusionArchiveOptions)
+                    exportOptions = exportMgr.createSTEPExportOptions(filePath + doc.name + fileType)
+                    res = exportMgr.execute(exportOptions)
                                 
                     doc.close(False)
         
