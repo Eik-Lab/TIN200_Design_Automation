@@ -18,7 +18,7 @@ Academic content for the NMBU course TIN200, Digital Manufacturing and Design Te
 
 - Computer/Laptop: Windows or MacOS
 - [Autodesk Fusion 360](https://www.autodesk.com/products/fusion-360/free-trial)
-- [Visual Studio Code](https://code.visualstudio.com/download)
+- IDE [Visual Studio Code](https://code.visualstudio.com/download)
 - [Python](https://www.python.org/downloads/)
 
 ## Resources
