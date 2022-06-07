@@ -12,7 +12,7 @@ Academic content for the NMBU course TIN200, Digital Manufacturing and Design Te
   - Lesson 1: Batch export
   - Lesson 2: Engraving
   - Lesson 3: TBA
-  <!-- - Lesson 4: TBA -->
+  - Extra: Crate generator, script extension ideas
 
 ## Prerequisites / Requirements
 
