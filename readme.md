@@ -11,15 +11,15 @@ Academic content for the NMBU course TIN200, Digital Manufacturing and Design Te
 - Lessons / Scripts
   - Lesson 1: Batch export
   - Lesson 2: Engraving
-  - Lesson 3: TBA
+  - Lesson 3: Flow-valve generator
   - Extra: Crate generator, script extension ideas
 
 ## Prerequisites / Requirements
 
 - Computer/Laptop: Windows or MacOS
-- [Autodesk Fusion 360](https://www.autodesk.com/products/fusion-360/free-trial)
-- IDE [Visual Studio Code](https://code.visualstudio.com/download)
-- [Python](https://www.python.org/downloads/)
+- CAD: [Autodesk Fusion 360](https://www.autodesk.com/products/fusion-360/free-trial)
+- IDE: [Visual Studio Code](https://code.visualstudio.com/download)
+- Programing langue: [Python](https://www.python.org/downloads/)
 
 ## Resources
 
