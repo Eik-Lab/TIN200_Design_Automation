@@ -121,7 +121,7 @@ class FlowValve():
         # Design parameters
         self._theta = defaultTheta           # angle between sensor-pipe and main-pipe
         self._D = defaultD                   # main pipe diameter
-        self.d = 15                          # sensor pipe diameter
+        self._d = 15                          # sensor pipe diameter
         # self._P = defaultP                 # distance between transducers
         self._P = self.calculate_P()         # distance between transducers
 
@@ -179,9 +179,9 @@ class FlowValve():
         # Draw circles
         circles_sp = sketch_sp.sketchCurves.sketchCircles
         # Draw outer circle
-        circle_sp_o = circles_sp.addByCenterRadius(centerPoint=center_sp, radius=self.d)
+        circle_sp_o = circles_sp.addByCenterRadius(centerPoint=center_sp, radius=self._d/2)
         # Draw inner circle
-        circle_sp_i = circles_sp.addByCenterRadius(centerPoint=circle_sp_o.centerSketchPoint, radius=self.d-self.d/10)
+        circle_sp_i = circles_sp.addByCenterRadius(centerPoint=circle_sp_o.centerSketchPoint, radius=self._d/2-self._d/10)
 
         # Extrude (new body)
         pipe_sp_profile = sketch_sp.profiles.item(0)  # get the pipe profile (profile between inner and outer circle)
