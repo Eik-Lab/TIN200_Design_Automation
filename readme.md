@@ -44,7 +44,7 @@ Academic content for the NMBU course TIN200, Digital Manufacturing and Design Te
 #### Fusion 360
 
 - Open design shortcuts (search): <kbd>s</kbd>
-- Open scripts and add-ins: <kbd>Shift</kbd>+<kbd>f</kbd>
+- Open scripts and add-ins: <kbd>Shift</kbd>+<kbd>s</kbd>
 
 #### Visual Studio Code
 
