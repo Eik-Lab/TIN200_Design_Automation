@@ -90,3 +90,5 @@ engrave_input.angle = radians(float(returnValue))/2
 ## Lesson 3
 
 - Make flanges on the ends of both pipes / pipe (with holes for bolts)
+ - Useful objects: [MirrorFeatures](https://help.autodesk.com/view/fusion360/ENU/?guid=GUID-GUID-e2fa227a-3c3c-4375-aeac-8557d4013178), [HoleFeature](https://help.autodesk.com/view/fusion360/ENU/?guid=GUID-GUID-3315b7ea-f85d-417c-ad31-2d328b72f6a5) 
+ - Useful operations: [FeatureOperations](https://help.autodesk.com/view/fusion360/ENU/?guid=GUID-GUID-GUID-d7074f3d-95d5-408b-904f-91eb8cddc095)
