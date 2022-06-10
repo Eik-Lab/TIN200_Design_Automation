@@ -86,3 +86,7 @@ engrave_input.textStyle = adsk.fusion.TextStyles.TextStyleBold
 engrave_input.textStyle = adsk.fusion.TextStyles.TextStyleUnderline
 engrave_input.angle = radians(float(returnValue))/2
 ```
+
+## Lesson 3
+
+- Make flanges on the ends of both pipes / pipe (with holes for bolts)
